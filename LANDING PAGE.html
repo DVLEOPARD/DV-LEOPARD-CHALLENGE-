@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap');
         
         :root {
             --leopard: #cfff04;
@@ -55,339 +55,338 @@
             transform: translateY(-5px);
         }
 
+        .regulation-section {
+            border-left: 2px solid var(--leopard);
+            padding-left: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .sticky-nav {
+            top: 100px;
+        }
+
+        .s-module-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            border: 1px border-white/5;
+        }
+
         /* 自定義捲軸 */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--leopard); }
+
+        .text-leopard { color: var(--leopard) !important; }
+        .bg-leopard { background-color: var(--leopard) !important; }
+        .border-leopard { border-color: var(--leopard) !important; }
     </style>
 </head>
-<body>
+<body class="antialiased font-sans">
 
-    <!-- 導航欄 -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/5 px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-black oswald tracking-tighter italic">
-            DV LEOPARD <span class="text-leopard">CHALLENGE</span>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 bg-[#050505]/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="oswald text-2xl font-black italic tracking-tighter uppercase">
+                DV LEOPARD <span class="text-leopard">CHALLENGE</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <span class="text-white border-b border-leopard pb-1 font-black">DV LEOPARD CHALLENGE 賽事規章</span>
+            </div>
+            <a href="https://dvstore.shoplineapp.com/forms/6970a4e7802e0383453bfd72" target="_blank" class="btn-hover bg-leopard text-black px-6 py-2 rounded-lg font-black text-xs uppercase tracking-wider">
+                開始報名
+            </a>
         </div>
-        <div class="hidden md:flex gap-8 text-xs font-bold tracking-[0.2em] uppercase">
-            <a href="#about" class="hover:text-leopard transition-colors">賽事介紹</a>
-            <a href="#modules" class="hover:text-leopard transition-colors">競技模塊</a>
-            <a href="#prize" class="hover:text-leopard transition-colors">參賽方案</a>
-            <a href="#schedule" class="hover:text-leopard transition-colors">賽程時間</a>
-        </div>
-        <a href="#register-form" class="bg-leopard text-black px-6 py-2 rounded-full font-black text-xs btn-hover uppercase tracking-wider">
-            立即報名
-        </a>
     </nav>
 
-    <!-- 英雄視覺區 -->
-    <header class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2070" 
-                 class="w-full h-full object-cover opacity-40 scale-105" alt="Athlete Training">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/20 to-black"></div>
-        </div>
-        
-        <div class="relative z-10 animate__animated animate__fadeIn">
-            
-            </span>
-            <h1 class="text-7xl md:text-[10rem] font-black mb-4 oswald uppercase italic leading-[0.85] tracking-tighter">
-                DV LEOPARD <br><span class="text-leopard">CHALLENGE</span>
+    <!-- Header Section -->
+    <header class="pt-48 pb-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(207,255,4,0.08)_0%,transparent_70%)]"></div>
+        <div class="max-w-5xl mx-auto relative z-10 animate__animated animate__fadeIn">
+            <div class="inline-block px-4 py-1 border border-leopard text-leopard oswald text-xs font-black tracking-widest uppercase mb-6">
+                Official Document / 賽事規章
+            </div>
+            <h1 class="oswald text-5xl md:text-8xl font-black italic uppercase leading-none mb-8 text-center md:text-left">
+                賽事規章內容公告
             </h1>
-            <p class="text-lg md:text-2xl font-medium tracking-[0.4em] mb-12 text-gray-400 uppercase">
-                 競技健身挑戰賽
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#register-form" class="bg-leopard text-black px-12 py-5 rounded-full font-black text-xl btn-hover shadow-2xl shadow-leopard/20">
-                    開始報名
-                </a>
-                <div class="text-left">
-                    <p class="text-sm text-white font-black italic">限量 96 支隊伍</p>
-                    <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Limited Slots Only</p>
+            <div class="grid md:grid-cols-2 gap-8 text-gray-400 font-light">
+                <div class="space-y-2 border-l border-white/20 pl-6">
+                    <p class="text-sm uppercase oswald tracking-widest text-leopard">Date / 日期</p>
+                    <p class="text-white font-bold">2026/03/07 (六) - 03/08 (日)</p>
+                </div>
+                <div class="space-y-2 border-l border-white/20 pl-6">
+                    <p class="text-sm uppercase oswald tracking-widest text-leopard">Location / 地點</p>
+                    <p class="text-white font-bold">花博爭艷館（SPORTSLAND 運動文化展）</p>
                 </div>
             </div>
-        </div>
-
-        <div class="absolute bottom-10 left-10 hidden lg:block animate__animated animate__fadeInLeft">
-            <div class="text-xs font-bold tracking-widest opacity-30 rotate-90 origin-left">SCROLL TO DISCOVER</div>
         </div>
     </header>
 
-    <!-- 賽制介紹 -->
-    <section id="about" class="py-32 bg-[#080808]">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-            <div class="card-blur p-12 rounded-[2rem] neon-border group">
-                <div class="flex justify-between items-start mb-8">
-                    <h3 class="oswald text-4xl font-black italic uppercase">U18 <span class="text-leopard">High School</span></h3>
-                    <div class="w-12 h-12 bg-leopard/10 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-leopard" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                </div>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">專為高中體系運動員打造，籃球、排球、足球校隊優先錄取。在全國級別的舞台，展現校園最強爆發力！</p>
-                <div class="flex justify-between items-end">
-                    <div>
-                        <span class="text-6xl font-black oswald italic tracking-tighter">48</span>
-                        <span class="text-[10px] block text-gray-500 font-bold uppercase tracking-widest mt-2">報名隊伍數</span>
-                    </div>
-                    <span class="text-leopard font-black italic text-sm">#高中頂尖對決</span>
-                </div>
-            </div>
-
-            <div class="card-blur p-12 rounded-[2rem] group">
-                <div class="flex justify-between items-start mb-8">
-                    <h3 class="oswald text-4xl font-black italic uppercase">Elite <span class="text-white">Open</span></h3>
-                    <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                </div>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">大學系隊、專業社團、運動愛好者。這場比賽沒有舒適圈，只有不斷超越極限的勇者，定義最強健身模組。</p>
-                <div class="flex justify-between items-end">
-                    <div>
-                        <span class="text-6xl font-black oswald italic tracking-tighter">48</span>
-                        <span class="text-[10px] block text-gray-500 font-bold uppercase tracking-widest mt-2">報名隊伍數</span>
-                    </div>
-                    <span class="text-white font-black italic text-sm opacity-60">#定義最強模組</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 模塊展示 -->
-    <section id="modules" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <h2 class="text-6xl font-black oswald italic mb-6">THE 6+1 CHALLENGE</h2>
-            <div class="w-24 h-1 bg-leopard mx-auto mb-8"></div>
-            <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-12">這不是傳統健身賽，這是全方位的競技測試。我們針對運動員所需的各項素質，設計了六大核心模塊與最終心智挑戰。</p>
+    <!-- Main Content Layout -->
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid lg:grid-cols-[280px_1fr] gap-16">
             
-            <!-- 影片嵌入區域 -->
-            <div class="max-w-4xl mx-auto mb-20">
-                <div class="relative pt-[56.25%] rounded-[2rem] overflow-hidden shadow-2xl shadow-leopard/10 border border-white/5 bg-zinc-900 group">
-                    <iframe class="absolute inset-0 w-full h-full" 
-                            src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&loop=1&playlist=ScMzIvxBSi4" 
-                            title="Competition Module Preview" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
+            <!-- Sidebar Navigation -->
+            <aside class="hidden lg:block">
+                <div class="sticky sticky-nav space-y-6">
+                    <div class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-600 mb-6 border-b border-white/10 pb-2">Rules Index</div>
+                    <a href="#intro" class="block text-sm font-bold text-gray-400 hover:text-leopard transition border-l-2 border-transparent hover:border-leopard pl-4">01 / 賽事背景</a>
+                    <a href="#prizes" class="block text-sm font-bold text-gray-400 hover:text-leopard transition border-l-2 border-transparent hover:border-leopard pl-4">02 / 組別與獎金</a>
+                    <a href="#mechanics" class="block text-sm font-bold text-gray-400 hover:text-leopard transition border-l-2 border-transparent hover:border-leopard pl-4">03 / 晉級機制</a>
+                    <a href="#standards" class="block text-sm font-bold text-gray-400 hover:text-leopard transition border-l-2 border-transparent hover:border-leopard pl-4">04 / 動作計分</a>
+                    <a href="#tutorial" class="block text-sm font-bold text-gray-400 hover:text-leopard transition border-l-2 border-transparent hover:border-leopard pl-4">05 / 教學影片</a>
+                </div>
+            </aside>
+
+            <!-- Regulations Content -->
+            <div class="space-y-28">
+                
+                <!-- 一、 賽事背景與組織單位 -->
+                <section id="intro" class="regulation-section animate__animated animate__fadeInUp">
+                    <h3 class="oswald text-4xl font-black italic uppercase mb-10 flex items-baseline">
+                        <span class="text-leopard mr-4">01</span> 賽事背景與單位
+                    </h3>
+                    <div class="space-y-8 text-gray-300">
+                        <p class="text-lg leading-relaxed border-b border-white/5 pb-8">
+                            本賽事以「<span class="text-white font-black italic">競技健身</span>」為核心概念，旨在評估團隊在壓力環境下的身體素質、動作品質與情緒表現。
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            <div>
+                                <h4 class="oswald text-xs text-gray-500 uppercase tracking-widest mb-2">Organizer</h4>
+                                <p class="font-bold text-white">斯藍運動股份有限公司</p>
+                            </div>
+                            <div>
+                                <h4 class="oswald text-xs text-gray-500 uppercase tracking-widest mb-2">Sponsor</h4>
+                                <p class="font-bold text-leopard italic">DAVILLAGE</p>
+                            </div>
+                            <div class="col-span-2">
+                                <h4 class="oswald text-xs text-gray-500 uppercase tracking-widest mb-2">Location</h4>
+                                <p class="font-bold text-white">台北市圓山花博爭豔館</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、 參賽組別與獎金分配 -->
+                <section id="prizes" class="regulation-section">
+                    <h3 class="oswald text-4xl font-black italic uppercase mb-10 flex items-baseline">
+                        <span class="text-leopard mr-4">02</span> 參賽組別與獎金
+                    </h3>
+                    <p class="text-gray-400 mb-8 italic">本賽事設立兩大組別，每組限額 48 隊，每隊由 <span class="text-leopard font-black underline underline-offset-4">3 名選手</span> 組成。</p>
                     
-                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold text-leopard tracking-widest opacity-0 group-hover:opacity-100 transition-opacity uppercase">
-                        Module Preview Video
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card-blur p-10 rounded-3xl border-white/10">
+                            <h4 class="oswald text-3xl font-black mb-8 italic text-white">18+ <span class="text-leopard">ELITE</span></h4>
+                            <div class="space-y-4 oswald">
+                                <div class="flex justify-between border-b border-white/5 pb-2"><span>CHAMPION / 冠軍</span><span class="text-leopard">$30,000</span></div>
+                                <div class="flex justify-between border-b border-white/5 pb-2 text-gray-400"><span>2ND / 亞軍</span><span>$20,000</span></div>
+                                <div class="flex justify-between border-b border-white/5 pb-2 text-gray-400"><span>3RD / 季軍</span><span>$10,000</span></div>
+                                <div class="flex justify-between text-gray-500 pt-4 text-sm"><span>MVP AWARD</span><span class="text-white">$5,000</span></div>
+                            </div>
+                        </div>
+                        <div class="card-blur p-10 rounded-3xl border-white/10">
+                            <h4 class="oswald text-3xl font-black mb-8 italic text-white">U18 <span class="text-leopard">YOUTH</span></h4>
+                            <div class="space-y-4 oswald">
+                                <div class="flex justify-between border-b border-white/10 pb-2"><span>CHAMPION / 冠軍</span><span class="text-leopard">$15,000</span></div>
+                                <div class="flex justify-between border-b border-white/10 pb-2 text-gray-400"><span>2ND / 亞軍</span><span>$10,000</span></div>
+                                <div class="flex justify-between border-b border-white/10 pb-2 text-gray-400"><span>3RD / 季軍</span><span>$5,000</span></div>
+                                <div class="flex justify-between text-gray-500 pt-4 text-sm"><span>MVP AWARD</span><span class="text-white">$2,500</span></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <p class="mt-6 text-sm text-gray-500 italic">查看競技健身挑戰賽 6+1 模塊示範影片</p>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M1</div>
-                <div class="font-black text-xl tracking-widest">敏捷</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Agility</div>
-            </div>
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M2</div>
-                <div class="font-black text-xl tracking-widest">爆發</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Explosion</div>
-            </div>
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M3</div>
-                <div class="font-black text-xl tracking-widest">反應</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Reaction</div>
-            </div>
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M4</div>
-                <div class="font-black text-xl tracking-widest">力量</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Strength</div>
-            </div>
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M5</div>
-                <div class="font-black text-xl tracking-widest">核心</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Core</div>
-            </div>
-            <div class="text-center p-8 card-blur rounded-2xl border-t-4 border-leopard">
-                <div class="text-leopard oswald text-3xl mb-4 italic font-black">M6</div>
-                <div class="font-black text-xl tracking-widest">耐力</div>
-                <div class="text-[10px] text-gray-600 mt-2 font-bold uppercase">Endurance</div>
-            </div>
-            <div class="text-center p-8 bg-leopard text-black rounded-2xl flex flex-col justify-center">
-                <div class="oswald text-3xl mb-2 italic font-black">+1</div>
-                <div class="font-black text-xl italic uppercase">心智</div>
-                <div class="text-[10px] font-black uppercase opacity-60">Mental</div>
-            </div>
-        </div>
-    </section>
+                </section>
 
-    <!-- 方案與禮包區 -->
-    <section id="prize" class="py-32 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black oswald italic leading-none uppercase mb-4">LEOPARD 參賽方案</h2>
-                <p class="text-2xl font-black text-gray-400 italic">CHOOSE YOUR GEAR PACK</p>
+                <!-- 三、 賽程晉級機制 -->
+                <section id="mechanics" class="regulation-section">
+                    <h3 class="oswald text-4xl font-black italic uppercase mb-10 flex items-baseline">
+                        <span class="text-leopard mr-4">03</span> 賽程晉級機制
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-8 bg-zinc-900/40 rounded-2xl border border-white/5">
+                            <div class="oswald text-leopard text-xl mb-4 italic">PRELIMINARY / 預賽</div>
+                            <div class="text-2xl font-black mb-4">12 分鐘</div>
+                            <p class="text-gray-500 text-sm leading-relaxed">48 隊分為 16 組 (A-P)，每組 3 隊同時競技，取<span class="text-white">分組第一名</span>晉級。</p>
+                        </div>
+                        <div class="p-8 bg-zinc-900/40 rounded-2xl border border-white/5">
+                            <div class="oswald text-leopard text-xl mb-4 italic">SEMIFINAL / 複賽</div>
+                            <div class="text-2xl font-black mb-4">15 分鐘</div>
+                            <p class="text-gray-500 text-sm leading-relaxed">16 隊分為 4 組競技，取<span class="text-white">分組第一名</span>晉級決賽。</p>
+                        </div>
+                        <div class="p-8 bg-leopard/10 rounded-2xl border border-leopard/30">
+                            <div class="oswald text-leopard text-xl mb-4 italic">FINAL / 決賽</div>
+                            <div class="text-2xl font-black mb-4 italic underline underline-offset-8">20 分鐘極限</div>
+                            <p class="text-gray-300 text-sm font-bold">最終 4 隊巔峰對決，挑戰生理與心智極限，決定最終前三名。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 四、 6+1 模組動作標準與計分原則 -->
+                <section id="standards" class="regulation-section pb-12">
+                    <h3 class="oswald text-4xl font-black italic uppercase mb-10 flex items-baseline">
+                        <span class="text-leopard mr-4">04</span> 動作標準與計分原則
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- S1 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S1</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">敏捷 (5-10-5 接力)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">選手需跑向端線，至少一腳踩線並同時用手觸地後折返。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">犯規不扣分，而是將動作不確實轉換為加秒，依最終時間對應分數。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S2 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S2</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">爆發力 (藥球極限拋投)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">面對龍門架，將 15kg 藥球拋過橫桿，至對側撿起再拋回原點，來回三趟。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">必須完全越過橫桿方可計次。未越過須重拋。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S3 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S3</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">反應協調 (30 秒動態平衡)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">在 3 公尺內循環放手與救起 PVC 反應管，保持管身不觸地。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">管子觸地即失誤，須親自重置回直立狀態方可恢復計分。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S4 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S4</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">核心穩定 (負重熊爬拖曳)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">全程保持膝蓋離地的熊爬姿勢，拖曳雪橇完成來回。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">膝蓋承重跪地每次加罰 5 秒；雪橇未完全過線需拉回起跑線重做。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S5 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S5</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">力量耐受 (負重行走接力)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">手持固定負重 (男 32kg/女 20kg 壺鈴) 於 120 秒內累積行走距離。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">雙手需始終維持負重，落地即停止該次里程計算直到重新提領。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S6 -->
+                        <div class="s-module-card p-8 rounded-2xl border border-white/10 group hover:border-leopard/40 transition-all duration-500">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-white/10 group-hover:text-leopard/20 transition duration-500 md:w-32">S6</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-white">耐力輸出 (AirBike 對抗)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-500 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-300">3 分鐘內接力踩踏 AirBike，累積卡路里數。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-300">換人次數不限，但必須完全下車後下一位方可開始。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S7 -->
+                        <div class="p-8 rounded-2xl border border-leopard/40 bg-leopard/5 group transition-all duration-500 relative overflow-hidden">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="oswald text-5xl font-black text-leopard md:w-32">S7</div>
+                                <div class="flex-1">
+                                    <div class="oswald text-2xl font-bold italic mb-4 text-leopard">心智模組 (團隊情緒展現)</div>
+                                    <div class="grid md:grid-cols-2 gap-8 text-sm">
+                                        <div class="space-y-2"><p class="text-gray-400 uppercase oswald font-bold tracking-widest text-xs">Standard / 標準</p><p class="text-gray-200">於 10 秒量測時段內，記錄團隊人聲吶喊之穩定音量。</p></div>
+                                        <div class="space-y-2"><p class="text-leopard uppercase oswald font-bold tracking-widest text-xs">Judgment / 判定</p><p class="text-gray-200 font-bold underline decoration-leopard">禁絕哨子、擴音器等輔助器材。</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、 教學影片 -->
+                <section id="tutorial" class="regulation-section pb-20">
+                    <h3 class="oswald text-4xl font-black italic uppercase mb-10 flex items-baseline">
+                        <span class="text-leopard mr-4">05</span> 教學影片 / Tutorial
+                    </h3>
+                    <div class="max-w-4xl mx-auto mb-20">
+                        <div class="relative pt-[56.25%] rounded-[2rem] overflow-hidden shadow-2xl shadow-leopard/10 border border-white/5 bg-zinc-900 group">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&loop=1&playlist=ScMzIvxBSi4"
+                                    title="Competition Module Preview"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+   <!-- 頁腳 -->
+    <footer class="py-24 px-6 border-t border-white/5 bg-black text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="oswald text-4xl font-black mb-10 italic tracking-tighter">
+                DV LEOPARD <span class="text-leopard">CHALLENGE</span>
             </div>
             
-            <!-- 基礎報名資訊 -->
-            <div class="mb-16 bg-zinc-900 text-white p-10 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center shadow-2xl">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-4xl font-black mb-2 oswald italic">報名費用 <span class="text-leopard">$1500</span> / 隊</h3>
-                    <p class="text-gray-400 font-bold tracking-widest">凡報名即獲得：<span class="text-white">LEOPARD 拉克蘭袖機能訓練短T (賽事短T)</span></p>
-                </div>
-                <a href="#register-form" class="bg-leopard text-black px-10 py-4 rounded-full font-black text-lg btn-hover whitespace-nowrap uppercase italic oswald">Get Started</a>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-10">
-                <!-- 方案 A -->
-                <div class="card-blur bg-zinc-50 border-2 border-black/5 p-10 rounded-[3rem] relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 bg-black text-white px-8 py-2 oswald italic font-black rounded-bl-3xl">PACKAGE A</div>
-                    <h4 class="text-3xl font-black mb-8 border-b-2 border-black/10 pb-4 italic">LEOPARD 大禮包 A</h4>
-                    <p class="text-sm font-bold text-zinc-400 mb-6 uppercase tracking-widest italic">報名費可折抵項目：</p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-leopard rounded-full"></span> 1. DV LPC 戰術背包
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-leopard rounded-full"></span> 2. 專業運動束衣
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-leopard rounded-full"></span> 3. DV 訓練短褲
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-leopard rounded-full"></span> 4. 紅卡會員
-                        </li>
-                    </ul>
-                    <div class="text-center opacity-20 group-hover:opacity-100 transition-opacity">
-                        <p class="oswald text-6xl font-black italic text-zinc-400">$1700</p>
+            <div class="grid md:grid-cols-3 gap-12 mb-16 text-left border-b border-white/5 pb-16">
+                <!-- 社群連結 -->
+                <div>
+                    <h5 class="text-leopard font-black oswald mb-6 tracking-widest uppercase">Follow Us</h5>
+                    <div class="flex flex-col gap-4 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                        <a href="https://www.facebook.com/DaVillageGroup/" target="_blank" class="hover:text-white transition-colors">Facebook</a>
+                        <a href="https://www.instagram.com/davillagetw" target="_blank" class="hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="text-gray-500 hover:text-leopard transition-colors">YouTube</a>
                     </div>
                 </div>
-
-                <!-- 方案 B -->
-                <div class="card-blur bg-zinc-50 border-2 border-black/5 p-10 rounded-[3rem] relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 bg-leopard text-black px-8 py-2 oswald italic font-black rounded-bl-3xl">PACKAGE B</div>
-                    <h4 class="text-3xl font-black mb-8 border-b-2 border-black/10 pb-4 italic">LEOPARD 大禮包 B</h4>
-                    <p class="text-sm font-bold text-zinc-400 mb-6 uppercase tracking-widest italic">報名費可折抵項目：</p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-black rounded-full"></span> 1. DV LPC 戰術背包
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-black rounded-full"></span> 2. 專業運動束衣
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-black rounded-full"></span> 3. DV 專業運動襪
-                        </li>
-                        <li class="flex items-center gap-4 font-black text-lg">
-                            <span class="w-2 h-2 bg-black rounded-full"></span> 4. 紅卡會員
-                        </li>
-                    </ul>
-                    <div class="text-center opacity-20 group-hover:opacity-100 transition-opacity">
-                        <p class="oswald text-6xl font-black italic text-zinc-400">$1700</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 賽程表 -->
-    <section id="schedule" class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-5xl font-black oswald italic mb-4">ROAD TO VICTORY</h2>
-            <p class="text-leopard font-black tracking-widest text-sm uppercase">你的挑戰之路從這裡開始</p>
-        </div>
-        
-        <div class="space-y-4">
-            <div class="flex flex-col md:flex-row justify-between items-center p-8 card-blur rounded-2xl hover:bg-white/5 transition-colors">
-                <div class="flex items-center gap-6 mb-4 md:mb-0">
-                    <span class="oswald text-leopard text-3xl font-black">01 / 21</span>
-                    <div class="h-8 w-[1px] bg-white/10 hidden md:block"></div>
-                    <span class="text-2xl font-black italic tracking-tight">官方報名正式開啟</span>
-                </div>
-                <span class="text-gray-500 text-sm font-bold italic tracking-widest uppercase">Registration Opens</span>
-            </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-center p-8 card-blur rounded-2xl hover:bg-white/5 transition-colors">
-                <div class="flex items-center gap-6 mb-4 md:mb-0">
-                    <span class="oswald text-white text-3xl font-black">02 / 23</span>
-                    <div class="h-8 w-[1px] bg-white/10 hidden md:block"></div>
-                    <span class="text-2xl font-black italic tracking-tight">門市領物 & 選手訪談</span>
-                </div>
-                <span class="text-gray-500 text-sm font-bold italic tracking-widest uppercase">Kit Collection</span>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center p-8 bg-leopard text-black rounded-2xl shadow-xl shadow-leopard/10">
-                <div class="flex items-center gap-6 mb-4 md:mb-0">
-                    <span class="oswald text-black text-3xl font-black">03 / 07</span>
-                    <div class="h-8 w-[1px] bg-black/10 hidden md:block"></div>
-                    <span class="text-2xl font-black italic tracking-tight">FINAL CHALLENGE 決戰</span>
-                </div>
-                <span class="text-black/60 text-sm font-black italic tracking-widest uppercase">The Main Event</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 報名連結區塊 -->
-    <section id="register-form" class="py-32 bg-leopard text-black">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="mb-12">
-                <h2 class="text-6xl font-black mb-4 uppercase oswald italic">Start Your Journey</h2>
-                <div class="w-20 h-2 bg-black mx-auto mb-6"></div>
-                <p class="font-black text-xl tracking-tight">請點選下方連結，填寫參賽隊伍詳細資料。</p>
-            </div>
-            
-            <div class="card-blur bg-white/30 backdrop-blur-md p-10 md:p-16 rounded-[3rem] border-2 border-black/5 shadow-2xl animate__animated animate__pulse animate__infinite animate__slow">
-                <h3 class="text-3xl font-black mb-8 oswald italic uppercase">Official Registration Form</h3>
                 
-                <a href="https://your-registration-link.com" target="_blank" class="inline-flex items-center justify-center gap-4 bg-black text-white px-12 py-6 rounded-2xl font-black text-2xl hover:bg-zinc-900 transition duration-300 shadow-2xl uppercase italic oswald tracking-widest group">
-                    <span>立即前往填寫報名表單</span>
-                    <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-                
-                <p class="text-sm font-bold mt-10 opacity-60 max-w-md mx-auto leading-relaxed">
-                    * 點擊按鈕將開啟外部報名頁面，請備妥隊員基本資訊與方案選擇。
-                </p>
+                <!-- 官方商城 -->
+                <div>
+                    <h5 class="text-leopard font-black oswald mb-6 tracking-widest uppercase">DV Shop</h5>
+                    <div class="flex flex-col gap-4 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                        <a href="https://www.dv-store.com/pages/dvleopard-combination/" target="_blank" class="hover:text-white transition-colors italic oswald">DV LEOPARD 線上商城</a>
+                    </div>
+                </div>
+
+                <!-- 賽事快速連結 -->
+                <div>
+                    <h5 class="text-leopard font-black oswald mb-6 tracking-widest uppercase">Quick Links</h5>
+                    <div class="flex flex-col gap-4 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                        <a href="https://dvstore.shoplineapp.com/forms/6970a4e7802e0383453bfd72" target="_blank" class="hover:text-white transition-colors underline decoration-leopard">立即報名參賽</a>
+                    </div>
+                </div>
             </div>
 
-            <p class="text-[10px] mt-12 font-black opacity-40 uppercase tracking-[0.2em]">
-                By proceeding, you agree to our terms of service and privacy policy.
+            <p class="text-[10px] text-zinc-800 font-black uppercase tracking-[0.5em]">
+                © 2026 DV Leopard Performance Series. All rights reserved.
             </p>
         </div>
-    </section>
-
-    <!-- 頁腳 -->
-    <footer class="py-20 px-6 border-t border-white/5 text-center bg-black">
-        <div class="oswald text-4xl font-black mb-10 italic tracking-tighter">
-            DV LEOPARD <span class="text-leopard">CHALLENGE</span>
-        </div>
-        <div class="flex justify-center gap-10 mb-12 text-xs font-black tracking-[0.3em] uppercase">
-            <a href="#" class="text-gray-500 hover:text-leopard transition-colors">Facebook</a>
-            <a href="#" class="text-gray-500 hover:text-leopard transition-colors">Instagram</a>
-            <a href="#" class="text-gray-500 hover:text-leopard transition-colors">YouTube</a>
-        </div>
-        <p class="text-[10px] text-zinc-800 font-black uppercase tracking-[0.5em]">
-            © 2026 DV Leopard Performance Series. All rights reserved.
-        </p>
     </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section > div').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 
 </body>
 </html>
